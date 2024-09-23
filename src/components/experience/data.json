@@ -1,0 +1,29 @@
+{
+    "workExperience": [
+      {
+        "logoName": "efLogo",
+        "duration": "Apr 2022 - Present",
+        "position": "Senior Software Engineer",
+        "company": "EF Information Systems, Zurich"
+      },
+      {
+        "logoName": "efLogo",
+        "duration": "Oct 2016 - Apr 2022",
+        "position": "Senior Software Engineer",
+        "company": "EF Information Systems, Bengaluru"
+      },
+      {
+        "logoName": "efLogo",
+        "duration": "Dec 2014 - Oct 2016",
+        "position": "Software Engineer",
+        "company": "EF Information Systems, Bengaluru"
+      },
+      {
+        "logoName": "samarthaLogo",
+        "duration": "Feb 2011 - Nov 2014",
+        "position": "Software Engineer",
+        "company": "Samartha Info Solutions, Bengaluru"
+      }
+    ]
+  }
+  
