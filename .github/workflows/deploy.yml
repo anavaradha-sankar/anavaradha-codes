@@ -27,6 +27,7 @@ jobs:
 
       # Step 3: Initialize Terraform
       - name: Terraform Init
+        working-directory: infra
         run: terraform init
         env:
           AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
@@ -36,6 +37,7 @@ jobs:
 
       # Step 4: Apply Terraform
       - name: Terraform Apply
+        working-directory: infra
         run: terraform apply -auto-approve -var-file=infra/terraform.tfvars
         env:
           AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
