@@ -58,7 +58,7 @@ jobs:
 
       # Step 9: Terraform Plan to validate the infrastructure changes
       - name: Terraform Plan
-        run: terraform plan -var-file=terraform.tfvars
+        run: terraform plan -var-file=infra/terraform.tfvars
         env:
           AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
           AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
