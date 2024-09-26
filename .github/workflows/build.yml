@@ -1,0 +1,35 @@
+name: Build App
+
+# Trigger the workflow on pushes to the main branch
+on:
+  push:
+    branches:
+      - main
+
+# Define the jobs
+jobs:
+  lint-and-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Check out the repository
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Step 2: Set up Node.js (adjust the version if needed)
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "20"
+
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Step 4: Run linter (assuming you're using ESLint or similar)
+      - name: Run linter
+        run: npm run lint
+
+      # Step 5: Build the React app
+      - name: Build application
+        run: npm run build
