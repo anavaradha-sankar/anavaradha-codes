@@ -1,35 +1,86 @@
 import { useState } from "react";
-const FooterBox = () => {
+
+interface FooterBoxProps {
+  bannerRef: React.RefObject<HTMLDivElement>;
+  aboutRef: React.RefObject<HTMLDivElement>;
+  experienceRef: React.RefObject<HTMLDivElement>;
+  connectRef: React.RefObject<HTMLDivElement>;
+}
+
+const FooterBox: React.FC<FooterBoxProps> = ({
+  bannerRef,
+  aboutRef,
+  experienceRef,
+  connectRef,
+}) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleClick = () => {
     setIsOpen(!isOpen);
   };
 
+  const handleScrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
+    if (ref.current) {
+      ref.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
     <>
       <div
-        className={`fixed left-1/2 bottom-16 transform -translate-x-1/2 w-[66%] lg:w-[45%]  bg-black transition-transform duration-300 ease-out ${
+        className={`fixed left-1/2 bottom-16 transform -translate-x-1/2 w-[66%] sm:w-[50%]  bg-black transition-transform duration-300 ease-out ${
           isOpen ? "translate-y-0" : "translate-y-[calc(100%+4rem)]"
         }  z-30`}
       >
-        <div className="flex flex-row sm:flex-col p-8 sm:p-16 text-white">
-          <div className="font-bigShoulders text-2xl sm:text-6xl w-full sm:w-[60%] border-r-2 border-customGray">
-            <ul className="space-y-4 ">
-              <li className="hover:text-customRed">HOME</li>
-              <li className="hover:text-customRed">ABOUT ME</li>
-              <li className="hover:text-customRed">EXPERIENCE</li>
-              <li className="hover:text-customRed">CONNECT</li>
+        <div className="flex flex-col sm:flex-row md:flex-row p-8 sm:p-16 text-white">
+          <div className="font-bigShoulders font-bold text-2xl sm:text-6xl w-full sm:w-[60%] border-customGray  sm:border-r-2 ">
+            <ul className="space-y-4 mb-4 sm:mb-0">
+              <li
+                className="hover:text-customRed cursor-pointer"
+                onClick={() => handleScrollToSection(bannerRef)}
+              >
+                HOME
+              </li>
+              <li
+                className="hover:text-customRed cursor-pointer"
+                onClick={() => handleScrollToSection(aboutRef)}
+              >
+                ABOUT ME
+              </li>
+              <li
+                className="hover:text-customRed cursor-pointer"
+                onClick={() => handleScrollToSection(experienceRef)}
+              >
+                EXPERIENCE
+              </li>
+              <li
+                className="hover:text-customRed cursor-pointer"
+                onClick={() => handleScrollToSection(connectRef)}
+              >
+                CONNECT
+              </li>
             </ul>
           </div>
-          <div className="hidden sm:flex w-[40%]"></div>
+          <div className="flex-row sm:flex flex-col w-full sm:w-[40%] items-center justify-center pt-6 sm:pt-0 sm:pl-11 border-customGray border-t-2 sm:border-t-0">
+            <p className="text-sm md:text-2xl mb-8">
+              Building Solutions, one line of code at a time – Grab my CV for
+              the full story!
+            </p>
+            <a
+              href="/Anavaradha Sankar Resume 2024.pdf" // Path to your CV
+              download="Anavaradha Sankar Resume 2024.pdf" // The name of the file for download
+              className="bg-white text-black font-semibold py-2 px-6 rounded-full border border-transparent hover:border-black hover:bg-gray-100 transition duration-300 ease-in-out w-auto inline-block"
+            >
+              Download CV
+            </a>
+          </div>
         </div>
       </div>
 
       <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 mb-4 bg-white rounded-lg shadow-lg w-[200px] sm:w-[230px] px-4 md:px-6 py-3 md:py-4 z-30">
         <div className="flex flex-row h-full w-full items-center">
           <button
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            onClick={() => handleScrollToSection(bannerRef)}
             className="basis-[65%] text-xs md:text-sm font-bold border-r-2 border-customRed focus:outline-none text-left pr-1 md:pr-1"
           >
             ANAVARADHA SANKAR
