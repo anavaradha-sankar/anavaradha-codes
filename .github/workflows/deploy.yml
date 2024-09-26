@@ -1,24 +1,44 @@
-name: Anavaradha Codes Web App CI/CD
+name: Deploy App
 
+# This triggers the deploy workflow when the build workflow completes.
 on:
-  push:
-    branches:
-      - main # Triggers the workflow on push to the main branch
+  workflow_run:
+    workflows: ["Build App"] # Name of the build workflow
+    types:
+      - completed # Run this workflow after the build workflow finishes (whether success or failure).
 
 jobs:
-  build_and_deploy_job:
+  deploy:
     runs-on: ubuntu-latest
 
+    # This ensures that the deploy job only runs if the build workflow was successful.
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+
     steps:
-      - name: Checkout Repository
+      # Step 1: Check out the repository
+      - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
+      # Step 2: Set up Terraform
+      - name: Set up Terraform
+        uses: hashicorp/setup-terraform@v2
         with:
-          node-version: "14" # Use the Node.js version that your React app requires
+          terraform_version: 1.3.0
 
-      - name: Install Dependencies
-        run: |
-          npm install
-          npm run build
+      # Step 3: Initialize Terraform
+      - name: Terraform Init
+        run: terraform init
+        env:
+          AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+          AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
+          AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+          AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+      # Step 4: Apply Terraform
+      - name: Terraform Apply
+        run: terraform apply -auto-approve -var-file=terraform.tfvars
+        env:
+          AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+          AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
+          AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+          AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}

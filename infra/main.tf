@@ -1,3 +1,16 @@
+terraform {
+  required_providers {
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "~> 2.0"
+    }
+  }
+  
+  required_version = ">= 0.12"
+}
+
+
+
 provider "azurerm" {
   features {}
 }
@@ -7,6 +20,7 @@ resource "azurerm_resource_group" "resource_group" {
   name     = "anavaradhaCodes" # Change this to your desired resource group name
   location = "West Europe"                  # Choose your preferred region
 }
+
 
 # Create a storage account
 resource "azurerm_storage_account" "storage_account" {
