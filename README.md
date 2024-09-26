@@ -78,3 +78,15 @@ Make sure you have the following installed on your machine:
     npm run build
 
 The built files will be generated in the `dist` directory.
+
+### Deployment
+The application is deployed to Azure Blob Storage using an automated CI/CD pipeline configured with GitHub Actions and Terraform.
+
+#### Deployment Process
+1. Infrastructure as Code (IaC): Terraform is used to define and provision the necessary Azure resources, including the storage account for hosting the static website.
+
+2. GitHub Actions: The CI/CD pipeline is triggered on pushes to the main branch. The pipeline consists of:
+
+   - Build Job: This job installs dependencies, runs linter checks, builds the React application, and uploads the build artifacts.
+   - Deploy Job: This job runs terraform apply to provision the Azure infrastructure and upload the build artifacts to the Azure Blob Storage.
+3. Automated Deployment: The automated pipeline ensures that the latest version of the application is deployed every time changes are pushed to the main branch
