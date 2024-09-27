@@ -26,3 +26,44 @@ jobs:
 
       - name: Build React App
         run: npm run build
+
+      - name: Login to Azure
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Upload to Azure Blob Storage
+        run: |
+          az storage blob upload-batch -d \$web --account-name anavaradhacodes -s dist/
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v1
+        with:
+          terraform_version: 1.9.6
+
+      - name: Terraform Init
+        working-directory: infra
+        env:
+          ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+          ARM_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
+          ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          ARM_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+        run: terraform init
+
+      - name: Terraform Format Check
+        working-directory: infra
+        env:
+          ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+          ARM_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
+          ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          ARM_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+        run: terraform fmt -check
+
+    #   - name: Terraform Plan
+    #     working-directory: infra
+    #     env:
+    #       ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+    #       ARM_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
+    #       ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+    #       ARM_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+    #     run: terraform plan -var "resource_group_name=anavaradhacodes" -var "storage_account_name=anavaradhacodes"

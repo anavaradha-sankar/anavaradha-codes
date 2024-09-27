@@ -1,3 +1,7 @@
-output "storage_account_primary_web_endpoint" {
-  value = azurerm_storage_account.storage_account.primary_web_endpoint
+output "resource_group_name" {
+  value = azurerm_resource_group.rg.name
+}
+
+output "storage_account_name" {
+  value = azurerm_storage_account.sa.name
 }
