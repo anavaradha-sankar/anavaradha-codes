@@ -4,12 +4,6 @@ export default {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
-      // screens: {
-      //   sm: "640px",
-      //   md: "768px",
-      //   lg: "1024px",
-      //   xl: "1280px",
-      // },
       colors: {
         ...colors,
         customRed: "#e84343", //'#004953',//'#0a192f',//'#BC244A',//
@@ -25,21 +19,21 @@ export default {
         bigShoulders: ["Big Shoulders Display", "sans-serif"],
       },
       fontSize: {
-        "120px": ["120px", "1"], // 1 here is the line height, you can adjust it as needed
+        "120px": ["120px", "1"], // 1 here is the line height
         "200px": ["200px", "1"],
       },
       keyframes: {
         moveLeft: {
           "0%": { transform: "translateX(0)" },
-          "100%": { transform: "translateX(-200px)" }, // Moves left by 100px
+          "100%": { transform: "translateX(-200px)" }, // Moves left by 200px
         },
         moveRight: {
           "0%": { transform: "translateX(0)" },
-          "100%": { transform: "translateX(200px)" }, // Moves right by 100px
+          "100%": { transform: "translateX(200px)" }, // Moves right by 200px
         },
       },
       animation: {
-        moveLeft: "moveLeft 4s ease-in-out infinite alternate", // Adjust duration and easing as needed
+        moveLeft: "moveLeft 4s ease-in-out infinite alternate",
         moveRight: "moveRight 4s ease-in-out infinite alternate",
       },
       backgroundImage: {

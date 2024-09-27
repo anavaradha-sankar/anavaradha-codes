@@ -16,13 +16,3 @@ resource "azurerm_storage_account" "storage_account" {
     error_404_document = "index.html"
   }
 }
-
-resource "azurerm_storage_blob" "dist_files" {
-  count               = length(fileset("${path.module}/../dist", "*"))
-  name                = "${fileset("${path.module}/../dist", "*")[count.index]}"
-  storage_account_name = azurerm_storage_account.storage_account.name
-  storage_container_name = "$web"
-  type                = "block"
-
-  source              = "${path.module}/../dist/${fileset("${path.module}/../dist", "*")[count.index]}"
-}

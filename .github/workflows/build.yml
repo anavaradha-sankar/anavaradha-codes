@@ -1,68 +1,28 @@
 name: Build App
 
-# Trigger the workflow on pushes to the main branch
 on:
   push:
     branches:
       - main
 
-# Define the jobs
 jobs:
-  lint-and-build:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Check out the repository
-      - name: Checkout code
+      - name: Checkout Code
         uses: actions/checkout@v2
 
-      # Step 2: Set up Node.js (adjust the version if needed)
-      - name: Set up Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
           node-version: "20"
 
-      # Step 3: Install dependencies
-      - name: Install dependencies
-        run: npm install
+      - name: Install Dependencies
+        run: npm ci
 
-      # Step 4: Run linter (assuming you're using ESLint or similar)
-      - name: Run linter
+      - name: Run Lint
         run: npm run lint
 
-      # Step 5: Build the React app
-      - name: Build application
+      - name: Build React App
         run: npm run build
-
-      # Step 6: Upload the 'dist' folder as an artifact
-      - name: Upload Build Artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: react-build-output
-          path: ./dist
-
-      # Step 7: Set up Terraform
-      - name: Set up Terraform
-        uses: hashicorp/setup-terraform@v2
-        with:
-          terraform_version: 1.3.0
-
-      # Step 8: Initialize Terraform
-      - name: Terraform Init
-        working-directory: infra
-        run: terraform init
-        env:
-          AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
-          AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
-          AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
-          AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-
-      # Step 9: Terraform Plan to validate the infrastructure changes
-      - name: Terraform Plan
-        working-directory: infra
-        run: terraform plan -var-file=terraform.tfvars
-        env:
-          AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
-          AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
-          AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
-          AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
