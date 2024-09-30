@@ -22,6 +22,7 @@ const FooterBox: React.FC<FooterBoxProps> = ({
   const handleScrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
     if (ref.current) {
       ref.current.scrollIntoView({ behavior: "smooth", block: "start" });
+      setIsOpen(false);
     }
   };
 
@@ -61,7 +62,7 @@ const FooterBox: React.FC<FooterBoxProps> = ({
               </li>
             </ul>
           </div>
-          <div className="flex-row sm:flex flex-col w-full sm:w-[40%] items-center justify-center pt-6 sm:pt-0 sm:pl-11 border-customGray border-t-2 sm:border-t-0">
+          <div className="flex-row sm:flex flex-col w-full sm:w-[40%] items-center justify-center pt-6 sm:pt-0 pb-6 sm:pb-0 sm:pl-11 border-customGray border-t-2 sm:border-t-0">
             <p className="text-sm md:text-2xl mb-8">
               Building Solutions, one line of code at a time – Grab my CV for
               the full story!
@@ -69,7 +70,7 @@ const FooterBox: React.FC<FooterBoxProps> = ({
             <a
               href="/Anavaradha Sankar Resume 2024.pdf" // Path to your CV
               download="Anavaradha Sankar Resume 2024.pdf" // The name of the file for download
-              className="bg-white text-black font-semibold py-2 px-6 rounded-full border border-transparent hover:border-black hover:bg-gray-100 transition duration-300 ease-in-out w-auto inline-block"
+              className="bg-white text-black text-xs md:text-xl font-semibold py-2 px-6 rounded-full border border-transparent hover:border-black hover:bg-gray-100 transition duration-300 ease-in-out w-auto inline-block"
             >
               Download CV
             </a>
