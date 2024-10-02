@@ -76,8 +76,8 @@ const FooterBox: React.FC<FooterBoxProps> = ({
               the full story!
             </p>
             <a
-              href="/Anavaradha Sankar Resume 2024.pdf" // Path to your CV
-              download="Anavaradha Sankar Resume 2024.pdf" // The name of the file for download
+              href="/Anavaradha Sankar Resume 2024.pdf"
+              download="Anavaradha Sankar Resume 2024.pdf"
               className="bg-white text-black text-xs md:text-xl font-semibold py-2 px-6 rounded-full border border-transparent hover:border-black hover:bg-gray-100 transition duration-300 ease-in-out w-auto inline-block"
             >
               Download CV

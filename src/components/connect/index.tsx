@@ -1,4 +1,10 @@
-import { FaEnvelope, FaPhone, FaLinkedin, FaInstagram } from "react-icons/fa";
+import {
+  FaEnvelope,
+  FaPhone,
+  FaLinkedin,
+  FaInstagram,
+  FaGithub,
+} from "react-icons/fa";
 
 export const Connect = () => {
   return (
@@ -52,6 +58,17 @@ export const Connect = () => {
               className="text-base md:text-xl hover:underline"
             >
               @das.ist.sankar
+            </a>
+          </div>
+          <div className="flex items-center mb-8">
+            <FaGithub className="text-[24px] mr-4" />
+            <a
+              href="https://github.com/anavaradha-sankar"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-base md:text-xl hover:underline"
+            >
+              anavaradha-sankar
             </a>
           </div>
         </div>

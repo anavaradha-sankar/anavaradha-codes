@@ -61,7 +61,7 @@ export const Skills = () => {
               {skillCategory.skills.map((skill, skillIndex) => (
                 <div
                   key={skillIndex}
-                  className="px-5 py-1.5 bg-customLightBrown rounded-lg  text-center text-md font-semibold"
+                  className="px-5 py-1.5 bg-customLightBrown rounded-lg  text-center text-md font-semibold "
                 >
                   {skill}
                 </div>

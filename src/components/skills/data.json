@@ -2,7 +2,14 @@
   "technicalSkills": [
     {
       "category": "Frontend Development",
-      "skills": ["HTML", "CSS", "ES6+", "JavaScript", "TypeScript", "React"]
+      "skills": [
+        "HTML",
+        "CSS",
+        "Tailwind CSS",
+        "JavaScript",
+        "TypeScript",
+        "React"
+      ]
     },
     {
       "category": "Backend Development",
@@ -21,7 +28,7 @@
       "skills": ["AWS", "Azure", "Terraform", "GitHub Actions", "Docker"]
     },
     {
-      "category": "Content Management Systens",
+      "category": "Content Management System",
       "skills": ["Sitecore", "Contentful", "Storyblok"]
     }
   ]
