@@ -8,30 +8,7 @@ import experiencesData from "./data.json";
 
 export const Experience = () => {
   const experiences: WorkExperience[] = experiencesData.workExperience;
-  const skills = [
-    "HTML",
-    "CSS",
-    "ES6+",
-    "JavaScript",
-    "TypeScript",
-    "NodeJS",
-    "C#",
-    "React",
-    "Flutter",
-    "ASP.NET",
-    ".NET Core",
-    "GraphQL",
-    "MS SQL",
-    "MySQL",
-    "Postgres",
-    "DynamoDB",
-    "MongoDB",
-    "Github Actions",
-    "Docker",
-    "Terraform",
-    "AWS",
-    "Azure",
-  ];
+
   return (
     <div className="w-screen min-h-screen bg-customGradient2 text-white p-10 lg:px-52">
       <div className="mb-8 flex items-center">
@@ -55,21 +32,6 @@ export const Experience = () => {
           </div>
         ))}
       </div>
-      {/* <div className="bg-customBrown p-12 rounded-lg shadow-md">
-        <div className="flex-col items-center">
-          <p className="text-xl font-semibold mb-8">Skills</p>
-          <div className="flex flex-wrap gap-4">
-            {skills.map((skill, skillIndex) => (
-              <div
-                key={skillIndex}
-                className="px-5 py-1.5 bg-customLightBrown rounded-lg  text-center text-sm font-semibold"
-              >
-                {skill}
-              </div>
-            ))}
-          </div>
-        </div>
-      </div> */}
     </div>
   );
 };
