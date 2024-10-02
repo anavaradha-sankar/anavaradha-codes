@@ -4,6 +4,7 @@ interface FooterBoxProps {
   bannerRef: React.RefObject<HTMLDivElement>;
   aboutRef: React.RefObject<HTMLDivElement>;
   experienceRef: React.RefObject<HTMLDivElement>;
+  skillsRef: React.RefObject<HTMLDivElement>;
   connectRef: React.RefObject<HTMLDivElement>;
 }
 
@@ -11,6 +12,7 @@ const FooterBox: React.FC<FooterBoxProps> = ({
   bannerRef,
   aboutRef,
   experienceRef,
+  skillsRef,
   connectRef,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -53,6 +55,12 @@ const FooterBox: React.FC<FooterBoxProps> = ({
                 onClick={() => handleScrollToSection(experienceRef)}
               >
                 EXPERIENCE
+              </li>
+              <li
+                className="hover:text-customRed cursor-pointer"
+                onClick={() => handleScrollToSection(skillsRef)}
+              >
+                SKILLS
               </li>
               <li
                 className="hover:text-customRed cursor-pointer"

@@ -39,3 +39,37 @@ export const TechnicalSkills: React.FC = () => {
     </div>
   );
 };
+
+export const Skills = () => {
+  const technicalSkills: SkillCategory[] = skillsData.technicalSkills;
+  return (
+    <div className="w-screen min-h-screen bg-customLightBrown text-white p-10 lg:px-52">
+      <div className="mb-8 flex items-center">
+        <div className="w-1.5 h-10 bg-customBrown mr-4"></div>
+        <h1 className="text-xl font-semibold">03 / SKILLS</h1>
+      </div>
+      {technicalSkills.map((skillCategory, skillCategoryIndex) => (
+        <div
+          className="bg-customBrown p-12 rounded-lg shadow-md mb-4"
+          key={skillCategoryIndex}
+        >
+          <div className="flex-col items-center">
+            <p className="text-xl  font-semibold mb-8">
+              {skillCategory.category}
+            </p>
+            <div className="flex flex-wrap gap-4">
+              {skillCategory.skills.map((skill, skillIndex) => (
+                <div
+                  key={skillIndex}
+                  className="px-5 py-1.5 bg-customLightBrown rounded-lg  text-center text-md font-semibold"
+                >
+                  {skill}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+};

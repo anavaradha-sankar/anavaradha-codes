@@ -55,7 +55,7 @@ export const Experience = () => {
           </div>
         ))}
       </div>
-      <div className="bg-customBrown p-12 rounded-lg shadow-md">
+      {/* <div className="bg-customBrown p-12 rounded-lg shadow-md">
         <div className="flex-col items-center">
           <p className="text-xl font-semibold mb-8">Skills</p>
           <div className="flex flex-wrap gap-4">
@@ -69,7 +69,7 @@ export const Experience = () => {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

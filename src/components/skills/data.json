@@ -1,0 +1,28 @@
+{
+  "technicalSkills": [
+    {
+      "category": "Frontend Development",
+      "skills": ["HTML", "CSS", "ES6+", "JavaScript", "TypeScript", "React"]
+    },
+    {
+      "category": "Backend Development",
+      "skills": ["ASP.NET", ".NET Core", "C#", "GraphQL", "NodeJS"]
+    },
+    {
+      "category": "Mobile Development",
+      "skills": ["Flutter"]
+    },
+    {
+      "category": "Databases & Data Storage",
+      "skills": ["MS SQL", "MySQL", "Postgres", "DynamoDB", "MongoDB"]
+    },
+    {
+      "category": "Cloud Engineering & Automation",
+      "skills": ["AWS", "Azure", "Terraform", "GitHub Actions", "Docker"]
+    },
+    {
+      "category": "Content Management Systens",
+      "skills": ["Sitecore", "Contentful", "Storyblok"]
+    }
+  ]
+}
