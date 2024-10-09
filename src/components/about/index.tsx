@@ -45,20 +45,21 @@ export const About = () => {
         <div className="w-1.5 h-10 bg-customeGreen mr-4"></div>
         <h1 className="text-xl font-semibold">01 / ABOUT ME</h1>
       </div>
-      <p className="text-3xl mb-10 animate-fadeIn">
+      <p className="font-bigShoulders text-6xl md:text-8xl font-extrabold mb-10 animate-fadeIn">
         {currentGreeting}
-        <span className="blinking-cursor">|</span>
+        <span className="blinking-cursor text-6xl md:text-8xl">|</span>
       </p>
       <p className="leading-relaxed text-lg md:text-2xl ">
-        I’m Anavaradha Sankar, a Senior Software Engineer with over 13 years of
-        experience building dynamic, user-centric applications. With expertise
-        across front-end and back-end technologies, I excel at delivering
-        scalable solutions, integrating complex systems, and managing projects
-        using Agile and Scrum methodologies. My passion lies in creating
-        efficient, high-performing web and mobile applications that solve
-        real-world problems, while continuously learning new technologies to
-        stay ahead in the field. Currently based in Zurich, I’m always excited
-        to explore new challenges in software development and innovation.
+        I'm Anavaradha Sankar Balasubramanian, a Senior Software Engineer
+        passionate about building dynamic, user-centric applications. My
+        expertise spans front-end and back-end technologies, with a focus on
+        delivering scalable solutions, integrating complex systems, and managing
+        projects efficiently using Agile and Scrum methodologies. I thrive on
+        developing high-performing web and mobile applications that address
+        real-world challenges, while continuously expanding my knowledge to stay
+        ahead in the ever-evolving tech landscape. Based in Zurich, I’m always
+        excited to take on new challenges in software development and
+        innovation.
       </p>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-20 md:gap-16 mt-28">
         <InfoCard number="13+" label="Years of Experience" />
