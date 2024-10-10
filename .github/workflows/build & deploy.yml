@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -41,4 +41,5 @@ jobs:
           az afd endpoint purge \
           --resource-group anavaradhacodes \
           --profile-name fd-anavaradha-codes \
+          --endpoint-name ep-anavaradha-codes \
           --content-paths '/*'
