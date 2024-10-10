@@ -2,6 +2,7 @@ interface SkillCategory {
   category: string;
   skills: string[];
 }
+import SectionHeader from "../common/section-header";
 import skillsData from "./data.json";
 
 export const TechnicalSkills: React.FC = () => {
@@ -44,10 +45,7 @@ export const Skills = () => {
   const technicalSkills: SkillCategory[] = skillsData.technicalSkills;
   return (
     <div className="w-screen min-h-screen bg-skillsSection text-primaryTextColor p-10 lg:px-52">
-      <div className="mb-8 flex items-center">
-        <div className="w-1.5 h-10 bg-tertiaryAccent mr-4"></div>
-        <h1 className="text-xl font-semibold">03 / SKILLS</h1>
-      </div>
+      <SectionHeader text="03 / SKILLS" accentColor="bg-tertiaryAccent" />
       <div className="font-bigShoulders text-6xl md:text-8xl font-extrabold">
         <p className="mb-4 uppercase">Full-Stack </p>
         <p className="mb-4 uppercase">Proficiencies</p>

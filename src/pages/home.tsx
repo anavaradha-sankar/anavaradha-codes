@@ -3,7 +3,7 @@ import { Banner } from "../components/banner";
 import { About } from "../components/about";
 import { Experience } from "../components/experience";
 import { Connect } from "../components/connect";
-import FooterBox from "../components/common/menu-container";
+import MenuContainer from "../components/common/menu-container";
 import { Skills } from "../components/skills";
 
 export const Home = () => {
@@ -31,7 +31,7 @@ export const Home = () => {
         <Connect />
       </div>
 
-      <FooterBox
+      <MenuContainer
         bannerRef={bannerRef}
         aboutRef={aboutRef}
         experienceRef={experienceRef}

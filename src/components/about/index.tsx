@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { InfoCard } from "./info-card";
+import SectionHeader from "../common/section-header";
 
 export const About = () => {
   const greetings = ["Hey", "வணக்கம்", "नमस्ते", "Hallo", "Bonjour", "Hola"];
@@ -41,10 +42,7 @@ export const About = () => {
 
   return (
     <div className="w-screen  bg-aboutSection  text-primaryTextColor flex flex-col p-10 lg:p-52">
-      <div className="flex items-center mb-8">
-        <div className="w-1.5 h-10 bg-primaryAccent mr-4"></div>
-        <h1 className="text-xl font-semibold">01 / ABOUT ME</h1>
-      </div>
+      <SectionHeader text="01 / ABOUT ME" accentColor="bg-primaryAccent" />
       <p className="font-bigShoulders text-6xl md:text-8xl font-extrabold mb-10 animate-fadeIn">
         {currentGreeting}
         <span className="blinking-cursor text-6xl md:text-8xl">|</span>

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-interface FooterBoxProps {
+interface MenuContainerProps {
   bannerRef: React.RefObject<HTMLDivElement>;
   aboutRef: React.RefObject<HTMLDivElement>;
   experienceRef: React.RefObject<HTMLDivElement>;
@@ -8,7 +8,7 @@ interface FooterBoxProps {
   connectRef: React.RefObject<HTMLDivElement>;
 }
 
-const FooterBox: React.FC<FooterBoxProps> = ({
+const MenuContainer: React.FC<MenuContainerProps> = ({
   bannerRef,
   aboutRef,
   experienceRef,
@@ -28,6 +28,14 @@ const FooterBox: React.FC<FooterBoxProps> = ({
     }
   };
 
+  const menuItems = [
+    { label: "HOME", sectionRef: "bannerRef" },
+    { label: "ABOUT ME", sectionRef: "aboutRef" },
+    { label: "EXPERIENCE", sectionRef: "experienceRef" },
+    { label: "SKILLS", sectionRef: "skillsRef" },
+    { label: "CONNECT", sectionRef: "connectRef" },
+  ];
+
   return (
     <>
       <div
@@ -38,36 +46,15 @@ const FooterBox: React.FC<FooterBoxProps> = ({
         <div className="flex flex-col sm:flex-row md:flex-row p-8 sm:p-16 text-menuItemTextColor">
           <div className="font-bigShoulders font-bold text-2xl sm:text-6xl w-full sm:w-[60%] border-menuBorderColor  sm:border-r-2 ">
             <ul className="space-y-4 mb-4 sm:mb-0">
-              <li
-                className="hover:text-menuItemHoverColor cursor-pointer"
-                onClick={() => handleScrollToSection(bannerRef)}
-              >
-                HOME
-              </li>
-              <li
-                className="hover:text-menuItemHoverColor cursor-pointer"
-                onClick={() => handleScrollToSection(aboutRef)}
-              >
-                ABOUT ME
-              </li>
-              <li
-                className="hover:text-menuItemHoverColor cursor-pointer"
-                onClick={() => handleScrollToSection(experienceRef)}
-              >
-                EXPERIENCE
-              </li>
-              <li
-                className="hover:text-menuItemHoverColor cursor-pointer"
-                onClick={() => handleScrollToSection(skillsRef)}
-              >
-                SKILLS
-              </li>
-              <li
-                className="hover:text-menuItemHoverColor cursor-pointer"
-                onClick={() => handleScrollToSection(connectRef)}
-              >
-                CONNECT
-              </li>
+              {menuItems.map((item, index) => (
+                <li
+                  key={index}
+                  className="hover:text-menuItemHoverColor cursor-pointer"
+                  onClick={() => handleScrollToSection(eval(item.sectionRef))}
+                >
+                  {item.label}
+                </li>
+              ))}
             </ul>
           </div>
           <div className="flex-row sm:flex flex-col w-full sm:w-[40%] items-center justify-center pt-6 sm:pt-0 pb-6 sm:pb-0 sm:pl-11 border-menuBorderColor border-t-2 sm:border-t-0">
@@ -134,4 +121,4 @@ const FooterBox: React.FC<FooterBoxProps> = ({
   );
 };
 
-export default FooterBox;
+export default MenuContainer;

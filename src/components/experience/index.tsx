@@ -4,6 +4,7 @@ interface WorkExperience {
   position: string;
   company: string;
 }
+import SectionHeader from "../common/section-header";
 import experiencesData from "./data.json";
 
 export const Experience = () => {
@@ -11,14 +12,12 @@ export const Experience = () => {
 
   return (
     <div className="w-screen min-h-screen bg-experienceSection text-primaryTextColor p-10 lg:px-52">
-      <div className="mb-8 flex items-center">
-        <div className="w-1.5 h-10 bg-secondaryAccent mr-4"></div>
-        <h1 className="text-xl font-semibold">02 / EXPERIENCE</h1>
-      </div>
+      <SectionHeader text="02 / EXPERIENCE" accentColor="bg-secondaryAccent" />
       <div className="font-bigShoulders text-6xl md:text-8xl font-extrabold">
         <p className="mb-4">13+ YEARS OF</p>
         <p>EXPERIENCE</p>
       </div>
+
       <div className="my-32">
         {experiences.map((experience, index) => (
           <div key={index} className="mb-6">
