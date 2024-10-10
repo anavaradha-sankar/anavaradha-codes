@@ -1,6 +1,6 @@
 # anavaradha-codes
 
-Welcome to the **anavaradha-codes** project! This is a personal portfolio website built using **React**, **Vite**, **TypeScript**, and styled with **Tailwind CSS**. This application showcases my skills, projects, and experience as a software developer.
+Welcome to the **anavaradha-codes** project! This is a personal portfolio website built using **React**, **Vite**, **TypeScript**, and styled with **Tailwind CSS**. This application showcases my skills, projects, and experience as a software developer.The site is deployed at anavaradha.codes.
 
 ## Features
 
@@ -109,7 +109,6 @@ The application is deployed to Azure Blob Storage using an automated CI/CD pipel
 
 2. GitHub Actions: The CI/CD pipeline is triggered on pushes to the main branch. The pipeline consists of:
 
-- Build Job: This job installs dependencies, runs linter checks, builds the React application, and uploads the build artifacts.
-- Deploy Job: This job runs terraform apply to provision the Azure infrastructure and upload the build artifacts to the Azure Blob Storage.
+- Build & Deploy Job: This job installs dependencies, runs linter checks, builds the React application, uploads the build artifacts to Azure Blob Storage, and purges the Azure Front Door cache.
 
 3. Automated Deployment: The automated pipeline ensures that the latest version of the application is deployed every time changes are pushed to the main branch
