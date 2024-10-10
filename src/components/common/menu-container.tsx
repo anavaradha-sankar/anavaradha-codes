@@ -29,11 +29,11 @@ const MenuContainer: React.FC<MenuContainerProps> = ({
   };
 
   const menuItems = [
-    { label: "HOME", sectionRef: "bannerRef" },
-    { label: "ABOUT ME", sectionRef: "aboutRef" },
-    { label: "EXPERIENCE", sectionRef: "experienceRef" },
-    { label: "SKILLS", sectionRef: "skillsRef" },
-    { label: "CONNECT", sectionRef: "connectRef" },
+    { label: "HOME", sectionRef: bannerRef },
+    { label: "ABOUT ME", sectionRef: aboutRef },
+    { label: "EXPERIENCE", sectionRef: experienceRef },
+    { label: "SKILLS", sectionRef: skillsRef },
+    { label: "CONNECT", sectionRef: connectRef },
   ];
 
   return (
@@ -50,7 +50,7 @@ const MenuContainer: React.FC<MenuContainerProps> = ({
                 <li
                   key={index}
                   className="hover:text-menuItemHoverColor cursor-pointer"
-                  onClick={() => handleScrollToSection(eval(item.sectionRef))}
+                  onClick={() => handleScrollToSection(item.sectionRef)}
                 >
                   {item.label}
                 </li>
