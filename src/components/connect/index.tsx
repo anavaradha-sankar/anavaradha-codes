@@ -8,7 +8,7 @@ import {
 
 export const Connect = () => {
   return (
-    <div className="w-screen bg-customGradient3 text-white  p-10 md:px-52 ">
+    <div className="w-screen bg-connectSection text-primaryTextColor  p-10 md:px-52 ">
       <div className="py-20 flex flex-col md:flex-row  gap-6">
         <div className="font-bigShoulders text-[90px] md:text-[220px] leading-none font-bold">
           <p>LET'S</p>

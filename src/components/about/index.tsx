@@ -40,9 +40,9 @@ export const About = () => {
   }, [currentGreeting, typingIndex, isDeleting, greetingIndex]);
 
   return (
-    <div className="w-screen  bg-customGradient  text-white flex flex-col p-10 lg:p-52">
+    <div className="w-screen  bg-aboutSection  text-primaryTextColor flex flex-col p-10 lg:p-52">
       <div className="flex items-center mb-8">
-        <div className="w-1.5 h-10 bg-customeGreen mr-4"></div>
+        <div className="w-1.5 h-10 bg-primaryAccent mr-4"></div>
         <h1 className="text-xl font-semibold">01 / ABOUT ME</h1>
       </div>
       <p className="font-bigShoulders text-6xl md:text-8xl font-extrabold mb-10 animate-fadeIn">

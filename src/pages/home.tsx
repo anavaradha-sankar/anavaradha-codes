@@ -3,7 +3,7 @@ import { Banner } from "../components/banner";
 import { About } from "../components/about";
 import { Experience } from "../components/experience";
 import { Connect } from "../components/connect";
-import FooterBox from "../components/common/footer-box";
+import FooterBox from "../components/common/menu-container";
 import { Skills } from "../components/skills";
 
 export const Home = () => {

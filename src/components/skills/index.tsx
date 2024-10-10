@@ -43,9 +43,9 @@ export const TechnicalSkills: React.FC = () => {
 export const Skills = () => {
   const technicalSkills: SkillCategory[] = skillsData.technicalSkills;
   return (
-    <div className="w-screen min-h-screen bg-customLightBrown text-white p-10 lg:px-52">
+    <div className="w-screen min-h-screen bg-skillsSection text-primaryTextColor p-10 lg:px-52">
       <div className="mb-8 flex items-center">
-        <div className="w-1.5 h-10 bg-customBrown mr-4"></div>
+        <div className="w-1.5 h-10 bg-tertiaryAccent mr-4"></div>
         <h1 className="text-xl font-semibold">03 / SKILLS</h1>
       </div>
       <div className="font-bigShoulders text-6xl md:text-8xl font-extrabold">
@@ -55,7 +55,7 @@ export const Skills = () => {
       <div className="my-32">
         {technicalSkills.map((skillCategory, skillCategoryIndex) => (
           <div
-            className="bg-customBrown p-12 rounded-lg shadow-md mb-4"
+            className="bg-tertiaryAccent p-12 rounded-lg shadow-md mb-4"
             key={skillCategoryIndex}
           >
             <div className="flex-col items-center">
@@ -66,7 +66,7 @@ export const Skills = () => {
                 {skillCategory.skills.map((skill, skillIndex) => (
                   <div
                     key={skillIndex}
-                    className="px-5 py-1.5 bg-customLightBrown rounded-lg  text-center text-md font-semibold "
+                    className="px-5 py-1.5 bg-skillsLightAccent rounded-lg  text-center text-md font-semibold "
                   >
                     {skill}
                   </div>

@@ -10,12 +10,12 @@ export const Experience = () => {
   const experiences: WorkExperience[] = experiencesData.workExperience;
 
   return (
-    <div className="w-screen min-h-screen bg-customGradient2 text-white p-10 lg:px-52">
+    <div className="w-screen min-h-screen bg-experienceSection text-primaryTextColor p-10 lg:px-52">
       <div className="mb-8 flex items-center">
-        <div className="w-1.5 h-10 bg-customeGreen mr-4"></div>
+        <div className="w-1.5 h-10 bg-secondaryAccent mr-4"></div>
         <h1 className="text-xl font-semibold">02 / EXPERIENCE</h1>
       </div>
-      <div className="font-bigShoulders text-7xl md:text-8xl font-extrabold">
+      <div className="font-bigShoulders text-6xl md:text-8xl font-extrabold">
         <p className="mb-4">13+ YEARS OF</p>
         <p>EXPERIENCE</p>
       </div>

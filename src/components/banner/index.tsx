@@ -16,17 +16,17 @@ export const Banner = () => {
   }, []);
 
   return (
-    <div className="relative w-screen h-screen bg-customRed flex flex-col items-center m-0 text-white justify-center">
+    <div className="relative w-screen h-screen bg-bannerSection flex flex-col items-center m-0 text-primaryTextColor justify-center">
       <div className="relative flex flex-col items-start items-center mb-4">
         <p
-          className={`font-bigShoulders text-[90px] sm:text-[90px] md:text-[180px] lg:text-[220px]  font-extrabold md:animate-moveRight leading-none relative z-10 mb-14 lg:mb-0 transition-all duration-300 ease-in-out ${
+          className={`font-bigShoulders text-[90px] sm:text-[90px] md:text-[180px] lg:text-[220px] font-extrabold md:animate-moveRight leading-none relative z-10 mb-14 lg:mb-0 transition-all duration-300 ease-in-out ${
             isScrolled ? "transform scale-110" : "transform scale-100"
           }`}
         >
           SOLUTION
         </p>
         <p
-          className={`font-bigShoulders text-[90px] sm:text-[90px] md:text-[180px] lg:text-[220px] text-white font-extrabold md:animate-moveLeft leading-none relative z-30 transition-all duration-300 ease-in-out ${
+          className={`font-bigShoulders text-[90px] sm:text-[90px] md:text-[180px] lg:text-[220px] font-extrabold md:animate-moveLeft leading-none relative z-30 transition-all duration-300 ease-in-out ${
             isScrolled ? "transform scale-110" : "transform scale-100 "
           }`}
         >

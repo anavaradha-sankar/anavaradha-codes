@@ -6,13 +6,17 @@ export default {
     extend: {
       colors: {
         ...colors,
-        customRed: "#e84343", //'#004953',//'#0a192f',//'#BC244A',//
-        customeGreen: "#5aa393",
-        customLightGreen: "#92c5ba",
-        customBrown: "#8a765f",
-        customLightBrown: "#c3a889",
-        customPurple: "rgb(121,119,232)",
-        customGray: "rgb(64, 64, 64)",
+        primaryAccent: "#e84343",
+        secondaryAccent: "#5aa393",
+        tertiaryAccent: "#8a765f",
+        primaryTextColor: "#ffffff",
+        secondaryTextColor: "#000000",
+        skillsLightAccent: "#c3a889",
+        menuContainerBg: "#ffffff",
+        menuDropdownBg: "#000000",
+        menuItemTextColor: "#ffffff",
+        menuItemHoverColor: { primaryAccent },
+        menuBorderColor: "rgb(64, 64, 64)",
       },
       fontFamily: {
         sans: ["Manrope", "sans-serif"], // Overrides the default sans-serif
@@ -37,11 +41,13 @@ export default {
         moveRight: "moveRight 4s ease-in-out infinite alternate",
       },
       backgroundImage: {
-        customGradient:
+        bannerSection: "linear-gradient(180deg,#e84343 0%,#e84343 100%)",
+        aboutSection:
           "linear-gradient(180deg, #e84343 0%, rgb(145,197,186) 100%)",
-        customGradient2:
+        experienceSection:
           "linear-gradient(180deg,#91c5ba 0%,rgb(195,168,137) 100%)",
-        customGradient3:
+        skillsSection: "linear-gradient(180deg,#c3a889 0%,#c3a889 100%)",
+        connectSection:
           "linear-gradient(180deg,#c3a889 0%,rgb(121,119,232) 200%)",
       },
     },
