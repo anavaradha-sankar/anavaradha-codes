@@ -1,6 +1,6 @@
 # anavaradha-codes
 
-Welcome to the **anavaradha-codes** project! This is a personal portfolio website built using **React**, **Vite**, **TypeScript**, and styled with **Tailwind CSS**. This application showcases my skills, projects, and experience as a software developer.The site is deployed at anavaradha.codes.
+Welcome to the **anavaradha-codes** project! This is a personal portfolio website built using **React**, **Vite**, **TypeScript**, and styled with **Tailwind CSS**. This application showcases my skills, projects, and experience as a software developer. The site is deployed at https://www.anavaradha.codes.
 
 ## Features
 
