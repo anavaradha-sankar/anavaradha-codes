@@ -30,7 +30,7 @@ export const Banner = () => {
             isScrolled ? "transform scale-110" : "transform scale-100 "
           }`}
         >
-          BUILDER
+          BUILDER!
         </p>
         <img
           src={sankarPic}
