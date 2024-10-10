@@ -38,5 +38,7 @@ jobs:
 
       - name: Purge Azure Front Door Cache
         run: |
-          az network front-door purge-endpoint --resource-group anavaradhacodes \
-          --name fd-anavaradha-codes --content-paths '/*'
+          az afd endpoint purge \
+          --resource-group anavaradhacodes \
+          --profile-name fd-anavaradha-codes \
+          --content-paths '/*'
