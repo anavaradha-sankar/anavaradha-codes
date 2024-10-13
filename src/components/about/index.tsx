@@ -41,13 +41,13 @@ export const About = () => {
   }, [currentGreeting, typingIndex, isDeleting, greetingIndex]);
 
   return (
-    <div className="w-screen  bg-aboutSection  text-primaryTextColor flex flex-col p-10 lg:p-52">
+    <div className="flex w-screen flex-col bg-aboutSection p-10 text-primaryTextColor lg:p-52">
       <SectionHeader text="01 / ABOUT ME" accentColor="bg-primaryAccent" />
-      <p className="font-bigShoulders text-6xl md:text-8xl font-extrabold mb-10 animate-fadeIn">
+      <p className="animate-fadeIn mb-10 font-bigShoulders text-6xl font-extrabold md:text-8xl">
         {currentGreeting}
         <span className="blinking-cursor text-6xl md:text-8xl">|</span>
       </p>
-      <p className="leading-relaxed text-lg md:text-2xl ">
+      <p className="text-lg leading-relaxed md:text-2xl">
         I'm Anavaradha Sankar Balasubramanian, a Senior Software Engineer
         passionate about building dynamic, user-centric applications. My
         expertise spans front-end and back-end technologies, with a focus on
@@ -59,7 +59,7 @@ export const About = () => {
         excited to take on new challenges in software development and
         innovation.
       </p>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-20 md:gap-16 mt-28">
+      <div className="mt-28 grid grid-cols-1 gap-20 md:grid-cols-3 md:gap-16">
         <InfoCard number="13+" label="Years of Experience" />
         <InfoCard number="10+" label="Technologies Leveraged" />
         <InfoCard number="50+" label="Features Deployed" />

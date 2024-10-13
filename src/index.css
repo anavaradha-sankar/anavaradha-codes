@@ -17,3 +17,68 @@
     opacity: 0;
   }
 }
+
+:root {
+  --primary-accent: #e84343;
+  --primary-light-accent: #f39494;
+  --secondary-accent: #5aa393;
+  --tertiary-accent: #8a765f;
+  --primary-text-color: #ffffff;
+  --secondary-text-color: #000000;
+  --banner-text-color: #ffffff;
+  --skills-dark-accent: #8a765f;
+  --skills-light-accent: #c3a889;
+  --info-card-bg: #ffffff;
+  --menu-container-bg: #ffffff;
+  --menu-dropdown-bg: #000000;
+  --menu-item-text-color: #ffffff;
+  --menu-item-hover-color: #e84343;
+  --menu-border-color: rgb(64, 64, 64);
+
+  --main-theme-gradient: linear-gradient(180deg, #e84343 0%, #5aa393 100%);
+  --dark-theme-gradient: linear-gradient(180deg, #1d1d1d 0%, #b5734c 100%);
+
+  --banner-section-bg: linear-gradient(180deg, #e84343 0%, #e84343 100%);
+  --about-section-bg: linear-gradient(
+    180deg,
+    #e84343 0%,
+    rgb(145, 197, 186) 100%
+  );
+  --experience-section-bg: linear-gradient(
+    180deg,
+    #91c5ba 0%,
+    rgb(195, 168, 137) 100%
+  );
+  --skills-section-bg: linear-gradient(180deg, #c3a889 0%, #c3a889 100%);
+  --connect-section-bg: linear-gradient(
+    180deg,
+    #c3a889 0%,
+    rgb(121, 119, 232) 200%
+  );
+}
+
+.theme-dark {
+  --primary-accent: #b5734c;
+  --secondary-accent: #b5734c;
+  --tertiary-accent: #b5734c;
+  --primary-text-color: #cbcaca;
+  --secondary-text-color: #f5f5f5;
+  --banner-text-color: #f5f5f5;
+  --skills-dark-accent: #373331;
+  --skills-light-accent: #5c5755;
+  --info-card-bg: #373331;
+  --menu-container-bg: #373331;
+  --menu-dropdown-bg: #1d1d1d;
+  --menu-item-text-color: #ffffff;
+  --menu-item-hover-color: #b5734c;
+  --menu-border-color: #2e2824;
+
+  --main-theme-gradient: linear-gradient(180deg, #e84343 0%, #5aa393 100%);
+  --dark-theme-gradient: linear-gradient(180deg, #1d1d1d 0%, #b5734c 100%);
+
+  --banner-section-bg: linear-gradient(180deg, #b5734c 0%, #1d1d1d 100%);
+  --about-section-bg: linear-gradient(180deg, #1d1d1d 0%, #222222 100%);
+  --experience-section-bg: linear-gradient(180deg, #222222 0%, #1d1d1d 100%);
+  --skills-section-bg: linear-gradient(180deg, #1d1d1d 0%, #222222 100%);
+  --connect-section-bg: linear-gradient(180deg, #222222 0%, #1d1d1d 100%);
+}

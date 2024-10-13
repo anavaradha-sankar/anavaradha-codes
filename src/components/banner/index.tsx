@@ -16,18 +16,18 @@ export const Banner = () => {
   }, []);
 
   return (
-    <div className="relative w-screen h-screen bg-bannerSection flex flex-col items-center m-0 text-primaryTextColor justify-center">
-      <div className="relative flex flex-col items-start items-center mb-4">
+    <div className="text-bannerTextColor relative m-0 flex h-screen w-screen flex-col items-center justify-center bg-bannerSection">
+      <div className="relative mb-4 flex flex-col items-start items-center">
         <p
-          className={`font-bigShoulders text-[90px] sm:text-[90px] md:text-[180px] lg:text-[220px] font-extrabold md:animate-moveRight leading-none relative z-10 mb-14 lg:mb-0 transition-all duration-300 ease-in-out ${
-            isScrolled ? "transform scale-110" : "transform scale-100"
+          className={`relative z-10 mb-14 font-bigShoulders text-[90px] font-extrabold leading-none transition-all duration-300 ease-in-out sm:text-[90px] md:animate-moveRight md:text-[180px] lg:mb-0 lg:text-[220px] ${
+            isScrolled ? "scale-110 transform" : "scale-100 transform"
           }`}
         >
           SOLUTION
         </p>
         <p
-          className={`font-bigShoulders text-[90px] sm:text-[90px] md:text-[180px] lg:text-[220px] font-extrabold md:animate-moveLeft leading-none relative z-30 transition-all duration-300 ease-in-out ${
-            isScrolled ? "transform scale-110" : "transform scale-100 "
+          className={`relative z-30 font-bigShoulders text-[90px] font-extrabold leading-none transition-all duration-300 ease-in-out sm:text-[90px] md:animate-moveLeft md:text-[180px] lg:text-[220px] ${
+            isScrolled ? "scale-110 transform" : "scale-100 transform"
           }`}
         >
           BUILDER
@@ -35,7 +35,7 @@ export const Banner = () => {
         <img
           src={sankarPic}
           alt="Anavaradha Sankar"
-          className="absolute transform -translate-y-1/2 top-[55%] lg:top-[45%] w-[70%] sm:w-[60%] md:w-[50%] lg:w-[400px] h-auto object-cover object-center z-20"
+          className="absolute top-[55%] z-20 h-auto w-[70%] -translate-y-1/2 transform object-cover object-center sm:w-[60%] md:w-[50%] lg:top-[45%] lg:w-[400px]"
         />
       </div>
     </div>

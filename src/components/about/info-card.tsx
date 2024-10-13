@@ -5,11 +5,11 @@ interface InfoCardProps {
 
 export const InfoCard: React.FC<InfoCardProps> = ({ number, label }) => {
   return (
-    <div className="relative bg-white text-secondaryTextColor p-6 text-center rounded-lg shadow-md flex flex-col justify-between ">
-      <p className="text-[110px] font-bold absolute left-16 -top-20 text-secondaryAccent z-10">
+    <div className="bg-infoCardBg relative flex flex-col justify-between rounded-lg p-6 text-center text-secondaryTextColor shadow-md">
+      <p className="absolute -top-20 left-16 z-10 text-[110px] font-bold text-secondaryAccent">
         {number}
       </p>
-      <p className="text-xl mt-14">{label}</p>
+      <p className="mt-14 text-xl">{label}</p>
     </div>
   );
 };
