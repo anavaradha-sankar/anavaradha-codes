@@ -3,7 +3,7 @@ import { InfoCard } from "./info-card";
 import SectionHeader from "../common/section-header";
 
 export const About = () => {
-  const greetings = ["Hey", "வணக்கம்", "नमस्ते", "Hallo", "Bonjour", "Hola"];
+  const greetings = ["Hey", "வணக்கம்", "नमस्ते", "Hallo", "Bonjour", "Hola", "Ciao"];
 
   const [currentGreeting, setCurrentGreeting] = useState("");
   const [greetingIndex, setGreetingIndex] = useState(0);
