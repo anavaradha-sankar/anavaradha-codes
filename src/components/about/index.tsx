@@ -48,7 +48,7 @@ export const About = () => {
         <span className="blinking-cursor text-6xl md:text-8xl">|</span>
       </p>
       <p className="text-lg leading-relaxed md:text-2xl">
-        I'm Anavaradha Sankar Balasubramanian, a Senior Software Engineer
+        I'm Anavaradha Sankar Balasubramanian, a Technical Lead
         passionate about building dynamic, user-centric applications. My
         expertise spans front-end and back-end technologies, with a focus on
         delivering scalable solutions, integrating complex systems, and managing
@@ -60,7 +60,7 @@ export const About = () => {
         innovation.
       </p>
       <div className="mt-28 grid grid-cols-1 gap-20 md:grid-cols-3 md:gap-16">
-        <InfoCard number="13+" label="Years of Experience" />
+        <InfoCard number="14+" label="Years of Experience" />
         <InfoCard number="10+" label="Technologies Leveraged" />
         <InfoCard number="50+" label="Features Deployed" />
       </div>
