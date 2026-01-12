@@ -14,7 +14,7 @@ export const Experience = () => {
     <div className="min-h-screen w-screen bg-experienceSection p-10 text-primaryTextColor lg:px-52">
       <SectionHeader text="02 / EXPERIENCE" accentColor="bg-secondaryAccent" />
       <div className="font-bigShoulders text-6xl font-extrabold md:text-8xl">
-        <p className="mb-4">13+ YEARS OF</p>
+        <p className="mb-4">14+ YEARS OF</p>
         <p>EXPERIENCE</p>
       </div>
 
