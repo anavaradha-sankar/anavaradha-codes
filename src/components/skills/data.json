@@ -25,7 +25,7 @@
     },
     {
       "category": "Cloud Engineering & Automation",
-      "skills": ["AWS", "Azure", "Terraform", "GitHub Actions", "Docker"]
+      "skills": ["AWS", "Azure", "Terraform", "GitLab CI/CD", "GitHub Actions", "Docker", "Ansible", "Nexus Repository", "Release Management (REX)"]
     },
     {
       "category": "Content Management System",
