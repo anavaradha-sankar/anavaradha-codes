@@ -2,7 +2,13 @@
     "workExperience": [
       {
         "logoName": "efLogo",
-        "duration": "Apr 2022 - Present",
+        "duration": "Nov 2024 - Present",
+        "position": "Technical Lead",
+        "company": "Tech Mahindra, Zurich"
+      },
+      {
+        "logoName": "efLogo",
+        "duration": "Apr 2022 - Sep 2024",
         "position": "Senior Software Engineer",
         "company": "EF Information Systems, Zurich"
       },
