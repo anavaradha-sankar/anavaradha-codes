@@ -63,8 +63,8 @@ const MenuContainer: React.FC<MenuContainerProps> = ({
               the full story!
             </p>
             <a
-              href="/Anavaradha Sankar Resume 2024.pdf"
-              download="Anavaradha Sankar Resume 2024.pdf"
+              href="/Anavaradha Sankar Resume 2026.pdf"
+              download="Anavaradha Sankar Resume 2026.pdf"
               className="inline-block w-auto rounded-full border border-transparent bg-primaryAccent px-6 py-2 text-xs font-semibold text-primaryTextColor transition duration-300 ease-in-out md:text-xl"
             >
               Download CV
