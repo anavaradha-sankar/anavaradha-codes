@@ -1,5 +1,6 @@
 import portrait from "./assets/sankar-portrait.webp";
-import { Nav, Section, ZurichClock } from "./components";
+import { Nav, Section } from "./components";
+import { Contact } from "./contact";
 import { useReveal } from "./useReveal";
 import {
   certifications,
@@ -8,7 +9,6 @@ import {
   experience,
   facts,
   languages,
-  links,
   profile,
   toolkit,
 } from "./data";
@@ -258,70 +258,6 @@ function Credentials() {
             ))}
           </ul>
         </div>
-      </div>
-    </Section>
-  );
-}
-
-function Contact() {
-  return (
-    <Section id="contact" index="05" label="Contact" className="bg-panel">
-      <div className="grid gap-14 md:grid-cols-[1.2fr_1fr]">
-        <div className="reveal">
-          <h2 className="font-display text-[18vw] leading-[0.85] tracking-wide sm:text-8xl lg:text-9xl">
-            Let's work <span className="outline-text">together</span>
-          </h2>
-          <p className="mt-8 max-w-md text-lg leading-relaxed text-muted">
-            Tell me what you're working on. Email is the quickest way to reach
-            me.
-          </p>
-          <div className="mt-6 flex flex-wrap gap-3 text-xs uppercase tracking-[0.2em] text-muted">
-            <span className="rounded-full border border-line px-4 py-2">
-              <ZurichClock />
-            </span>
-            <span className="flex items-center gap-2 rounded-full border border-line px-4 py-2">
-              <span className="h-2 w-2 rounded-full bg-emerald-400" aria-hidden="true" />
-              {profile.status}
-            </span>
-          </div>
-          <div className="mt-10 flex flex-wrap gap-3">
-            <a
-              href={`mailto:${profile.email}`}
-              className="rounded-full bg-gold px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-ink transition-colors hover:bg-cream"
-            >
-              Email me
-            </a>
-            <a
-              href={profile.cv}
-              download
-              className="rounded-full border border-line px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-cream transition-colors hover:border-gold hover:text-gold"
-            >
-              Download CV
-            </a>
-          </div>
-        </div>
-        <ul className="reveal divide-y divide-line border-y border-line">
-          {links.map((l) => {
-            const external = l.href.startsWith("http");
-            return (
-              <li key={l.label}>
-                <a
-                  href={l.href}
-                  {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                  className="group flex items-baseline justify-between gap-4 py-5"
-                >
-                  <span className="text-xs uppercase tracking-[0.3em] text-gold">
-                    {l.label}
-                  </span>
-                  <span className="truncate text-cream transition-colors group-hover:text-gold">
-                    {l.value}
-                    {external && <span aria-hidden="true"> ↗</span>}
-                  </span>
-                </a>
-              </li>
-            );
-          })}
-        </ul>
       </div>
     </Section>
   );
