@@ -185,21 +185,27 @@ function Experience() {
 function Toolkit() {
   return (
     <Section id="toolkit" index="03" label="Toolkit" className="bg-panel">
-      <h2 className="reveal font-display text-6xl leading-[0.9] tracking-wide md:text-7xl">
-        What I work with
-      </h2>
-      <dl className="mt-14 grid gap-x-12 md:grid-cols-2">
+      <h2 className="sr-only">Toolkit</h2>
+      <div className="border-t border-line">
         {toolkit.map((t) => (
-          <div key={t.group} className="reveal border-t border-line py-6">
-            <dt className="font-display text-2xl tracking-wide text-gold">
+          <div
+            key={t.group}
+            className="reveal flex flex-col gap-3 border-b border-line py-8 md:flex-row md:items-baseline md:gap-10"
+          >
+            <h3 className="outline-text shrink-0 font-display text-5xl leading-none tracking-wide sm:text-6xl md:w-[26rem] md:text-7xl">
               {t.group}
-            </dt>
-            <dd className="mt-2 leading-relaxed text-muted">
-              {t.items.join(" · ")}
-            </dd>
+            </h3>
+            <p className="text-lg leading-relaxed text-muted">
+              {t.items.map((item, i) => (
+                <span key={item}>
+                  <span className="whitespace-nowrap">{item}</span>
+                  {i < t.items.length - 1 && " · "}
+                </span>
+              ))}
+            </p>
           </div>
         ))}
-      </dl>
+      </div>
     </Section>
   );
 }

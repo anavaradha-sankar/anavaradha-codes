@@ -126,19 +126,19 @@ export const experience: Role[] = [
 export const toolkit = [
   {
     group: "Frontend",
-    items: ["React", "TypeScript", "JavaScript", "Angular", "Tailwind CSS", "HTML", "CSS"],
+    items: ["HTML", "CSS", "Tailwind CSS", "JavaScript", "TypeScript", "React", "Angular"],
   },
   {
     group: "Backend",
-    items: [".NET Core", "ASP.NET", "C#", "GraphQL", "Node.js", "Kafka", "Elasticsearch"],
+    items: ["ASP.NET", ".NET Core", "C#", "GraphQL", "NodeJS", "Kafka", "Elasticsearch"],
   },
   { group: "Mobile", items: ["Flutter"] },
   {
-    group: "Data",
-    items: ["MS SQL", "PostgreSQL", "MySQL", "MongoDB", "DynamoDB"],
+    group: "Databases",
+    items: ["MS SQL", "MySQL", "Postgres", "DynamoDB", "MongoDB"],
   },
   {
-    group: "Cloud and delivery",
+    group: "Cloud & Automation",
     items: [
       "AWS",
       "Azure",
@@ -146,18 +146,28 @@ export const toolkit = [
       "GitLab CI/CD",
       "GitHub Actions",
       "Docker",
+      "Ansible",
+      "Nexus Repository",
+      "Release Management (REX)",
       "Kubernetes",
-      "Nexus",
       "Splunk",
       "Microsoft Entra ID",
     ],
   },
-  { group: "AI tooling", items: ["Claude Code", "Agent tooling", "Generative AI"] },
-  { group: "CMS", items: ["Contentful", "Storyblok", "Sitecore"] },
   {
-    group: "Ways of working",
-    items: ["Release coordination", "Scrum Master", "Stakeholder alignment"],
+    group: "AI-Augmented Engineering",
+    items: ["Claude Code", "Agent tooling", "Generative AI"],
   },
+  {
+    group: "Leadership",
+    items: [
+      "Technology Leadership",
+      "Scrum Master",
+      "Stakeholder alignment",
+      "Release coordination",
+    ],
+  },
+  { group: "CMS", items: ["Sitecore", "Contentful", "Storyblok"] },
 ];
 
 export const education = [
