@@ -30,10 +30,31 @@ export const links = [
   },
 ];
 
-export const facts = [
-  { value: "15+", label: "Years building and shipping software" },
-  { value: "~10", label: "Years at EF Education First" },
-  { value: "B", label: "Swiss permit, no sponsorship needed" },
+export const products = [
+  {
+    kind: "UBS · 2024 to 2026",
+    name: "Fund Client Reporting",
+    text: "Reporting portal for UBS fund clients, moved over from Credit Suisse after the merger.",
+    stack: [".NET", "Angular", "GitLab CI/CD"],
+  },
+  {
+    kind: "EF · Mobile app",
+    name: "Campus Connect",
+    text: "The app EF campus students use for schedules, progress, payments and activities.",
+    stack: ["Flutter", "Kubernetes", "Adyen"],
+  },
+  {
+    kind: "EF · Web app",
+    name: "Customer Portal",
+    text: "Tests, invoices and payments for EF students in the browser.",
+    stack: ["React", "TypeScript", "OAuth2"],
+  },
+  {
+    kind: "EF · Website",
+    name: "MyEF",
+    text: "EF's student website, rebuilt in React and TypeScript, plus production support.",
+    stack: ["React", "TypeScript", "AWS"],
+  },
 ];
 
 export const coreStack = [

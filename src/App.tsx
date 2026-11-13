@@ -7,7 +7,7 @@ import {
   coreStack,
   education,
   experience,
-  facts,
+  products,
   languages,
   profile,
   toolkit,
@@ -95,12 +95,12 @@ function Hero() {
 function About() {
   return (
     <Section id="about" index="01" label="About" className="bg-panel">
-      <div className="grid gap-14 md:grid-cols-[1.1fr_1fr]">
+      <div className="grid gap-10 md:grid-cols-[1fr_1.1fr] md:gap-16">
+        <h2 className="reveal font-display text-6xl leading-[0.9] tracking-wide md:text-7xl">
+          From first commit <span className="text-gold">to production.</span>
+        </h2>
         <div className="reveal">
-          <h2 className="font-display text-6xl leading-[0.9] tracking-wide md:text-7xl">
-            From first commit <span className="text-gold">to production.</span>
-          </h2>
-          <div className="mt-8 space-y-5 text-lg leading-relaxed text-muted">
+          <div className="space-y-5 text-lg leading-relaxed text-muted">
             <p>
               I work across the stack with .NET Core, C#, React and TypeScript.
               Most recently I was at Tech Mahindra on UBS's Fund Client
@@ -117,25 +117,38 @@ function About() {
             <p>
               I use Claude Code and agent tooling every day to get work done
               faster, and I took a CAS in Generative AI at the University of
-              Zurich. I live in Switzerland on a B permit, so you don't need to
-              sponsor a visa.
+              Zurich.
             </p>
           </div>
+          <p className="mt-7 inline-flex items-center gap-2.5 rounded-full border border-line px-4 py-2 text-xs uppercase tracking-[0.2em] text-cream">
+            <span className="h-2 w-2 rounded-full bg-emerald-400" aria-hidden="true" />
+            Swiss B permit · no sponsorship needed
+          </p>
         </div>
-        <dl className="reveal grid self-start gap-px overflow-hidden rounded-2xl border border-line bg-line">
-          {facts.map((f) => (
-            <div key={f.label} className="flex items-baseline gap-6 bg-panel p-7">
-              <dt className="sr-only">{f.label}</dt>
-              <dd className="w-24 shrink-0 font-display text-6xl text-gold">
-                {f.value}
-              </dd>
-              <dd className="text-sm uppercase tracking-[0.2em] text-muted">
-                {f.label}
-              </dd>
-            </div>
-          ))}
-        </dl>
       </div>
+
+      <h3 className="eyebrow reveal mt-20">Things I've built</h3>
+      <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        {products.map((p, i) => (
+          <li
+            key={p.name}
+            className={`reveal flex flex-col rounded-2xl border bg-ink/60 p-6 ${
+              i === 0 ? "border-gold/50" : "border-line"
+            }`}
+          >
+            <p className="text-[0.7rem] uppercase tracking-[0.25em] text-gold">{p.kind}</p>
+            <p className="mt-4 font-display text-4xl leading-[0.95] tracking-wide">{p.name}</p>
+            <p className="mt-3 flex-1 leading-relaxed text-muted">{p.text}</p>
+            <ul className="mt-5 flex flex-wrap gap-1.5" aria-label="Stack">
+              {p.stack.map((t) => (
+                <li key={t} className="rounded-full border border-line px-2.5 py-1 text-xs text-cream">
+                  {t}
+                </li>
+              ))}
+            </ul>
+          </li>
+        ))}
+      </ul>
     </Section>
   );
 }
