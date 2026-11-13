@@ -71,19 +71,23 @@ function Hero() {
           </p>
         </div>
       </div>
-      <ul
-        className="relative mx-auto mt-20 flex max-w-page flex-wrap gap-x-6 gap-y-3 border-t border-line pt-8 text-sm uppercase tracking-[0.2em] text-muted"
-        aria-label="Core stack"
-      >
-        {coreStack.map((s) => (
-          <li key={s} className="flex items-center gap-6">
-            {s}
-            <span className="text-gold/70 [li:last-child_&]:hidden" aria-hidden="true">
-              ✦
-            </span>
-          </li>
-        ))}
-      </ul>
+      <div className="relative mx-auto mt-20 max-w-page border-t border-line pt-8">
+        <p className="eyebrow mb-5" id="core-stack-label">
+          Core stack
+        </p>
+        <ul className="flex flex-wrap gap-2.5" aria-labelledby="core-stack-label">
+          {coreStack.map((s) => (
+            <li
+              key={s.name}
+              className={`rounded-full border px-4 py-2 text-[15px] font-medium ${
+                s.main ? "border-gold text-gold" : "border-line bg-panel text-cream"
+              }`}
+            >
+              {s.name}
+            </li>
+          ))}
+        </ul>
+      </div>
     </section>
   );
 }

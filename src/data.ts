@@ -37,16 +37,16 @@ export const facts = [
 ];
 
 export const coreStack = [
-  ".NET Core",
-  "C#",
-  "React",
-  "TypeScript",
-  "Angular",
-  "Flutter",
-  "AWS",
-  "Terraform",
-  "GitLab CI/CD",
-  "Claude Code",
+  { name: ".NET Core", main: true },
+  { name: "React", main: true },
+  { name: "C#" },
+  { name: "TypeScript" },
+  { name: "Angular" },
+  { name: "Flutter" },
+  { name: "AWS" },
+  { name: "Terraform" },
+  { name: "GitLab CI/CD" },
+  { name: "Claude Code" },
 ];
 
 export interface Role {
