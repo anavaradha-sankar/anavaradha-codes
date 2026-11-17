@@ -2,6 +2,7 @@ import portrait from "./assets/sankar-portrait.webp";
 import { Nav, Section } from "./components";
 import { Contact } from "./contact";
 import { Experience } from "./experience";
+import { Toolkit } from "./toolkit";
 import { useReveal } from "./useReveal";
 import {
   certifications,
@@ -10,7 +11,6 @@ import {
   products,
   languages,
   profile,
-  toolkit,
 } from "./data";
 
 function Hero() {
@@ -149,34 +149,6 @@ function About() {
           </li>
         ))}
       </ul>
-    </Section>
-  );
-}
-
-function Toolkit() {
-  return (
-    <Section id="toolkit" index="03" label="Toolkit" className="bg-panel">
-      <h2 className="sr-only">Toolkit</h2>
-      <div className="border-t border-line">
-        {toolkit.map((t) => (
-          <div
-            key={t.group}
-            className="reveal flex flex-col gap-3 border-b border-line py-8 md:flex-row md:items-baseline md:gap-10"
-          >
-            <h3 className="outline-text shrink-0 font-display text-5xl leading-none tracking-wide sm:text-6xl md:w-[26rem] md:text-7xl">
-              {t.group}
-            </h3>
-            <p className="text-lg leading-relaxed text-muted">
-              {t.items.map((item, i) => (
-                <span key={item}>
-                  <span className="whitespace-nowrap">{item}</span>
-                  {i < t.items.length - 1 && " · "}
-                </span>
-              ))}
-            </p>
-          </div>
-        ))}
-      </div>
     </Section>
   );
 }
