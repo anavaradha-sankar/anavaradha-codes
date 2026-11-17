@@ -114,6 +114,9 @@ function CopyButton({ value, label }: { value: string; label: string }) {
 
 export function Contact() {
   const sectionRef = useRef<HTMLElement>(null);
+  // Which row the visitor is pointing at or has focused. Drives the big outline word.
+  const [hovered, setHovered] = useState<number | null>(null);
+  const word = hovered === null ? "Let's talk" : links[hovered].hint;
 
   // Gold spotlight that follows the pointer across the section.
   const onPointerMove = (e: PointerEvent<HTMLElement>) => {
@@ -166,20 +169,33 @@ export function Contact() {
 
         <h2 className="mt-14 font-display text-[18vw] leading-[0.85] tracking-wide md:mt-20 md:text-[10rem]">
           <ScrambleText text="Let's work" className="block" />
-          <span className="flex items-end gap-4">
+          <span className="flex items-baseline gap-[0.2em]">
             <ScrambleText text="together" className="outline-text" />
-            <ArrowUpRight className="mb-[0.12em] h-[0.6em] w-[0.6em] text-gold" />
+            <span className="outline-text" aria-hidden="true">↗</span>
           </span>
         </h2>
 
         <div className="mt-16 grid gap-12 md:mt-20 md:grid-cols-12 md:gap-16">
-          <ol className="md:col-span-8">
+          <ol className="relative md:col-span-8" onMouseLeave={() => setHovered(null)}>
+            <div
+              aria-hidden="true"
+              className={`pointer-events-none absolute -top-24 right-0 hidden overflow-hidden font-display text-8xl leading-none transition-opacity duration-500 md:block ${
+                hovered === null ? "opacity-0" : "opacity-100"
+              }`}
+            >
+              <span key={word} className="talk-word outline-text block whitespace-nowrap">
+                {word}
+              </span>
+            </div>
             {links.map((l, i) => {
               const external = l.href.startsWith("http");
               const copyable = l.label === "Email" || l.label === "Phone";
               return (
                 <li
                   key={l.label}
+                  onMouseEnter={() => setHovered(i)}
+                  onFocus={() => setHovered(i)}
+                  onBlur={() => setHovered(null)}
                   className="group border-b border-line first:border-t"
                 >
                   <div className="flex items-center gap-4 py-5 transition-[padding] duration-300 group-hover:px-4 md:py-7">
@@ -204,6 +220,14 @@ export function Contact() {
                 </li>
               );
             })}
+            <li aria-hidden="true" className="h-24 overflow-hidden pt-4 md:h-40 md:pt-6">
+              <span
+                key={word}
+                className="talk-word outline-text block whitespace-nowrap font-display text-6xl leading-none opacity-40 md:text-8xl"
+              >
+                {word}
+              </span>
+            </li>
           </ol>
 
           <div className="md:col-span-4">
@@ -227,12 +251,6 @@ export function Contact() {
                 Download CV
               </a>
             </div>
-            <p
-              aria-hidden="true"
-              className="outline-text mt-16 hidden font-display text-8xl leading-none opacity-40 md:block"
-            >
-              Let's talk
-            </p>
           </div>
         </div>
       </div>

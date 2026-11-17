@@ -6,25 +6,28 @@ export const profile = {
   email: "anavaradha.sankar@gmail.com",
   phone: "+41 76 223 11 23",
   phoneHref: "tel:+41762231123",
-  cv: "/Anavaradha Sankar Resume 2026.pdf",
+  cv: "/Anavaradha_Sankar_CV_Technical_Lead.pdf",
   status: "Open to new roles",
 };
 
 export const links = [
-  { label: "Email", value: profile.email, href: `mailto:${profile.email}` },
-  { label: "Phone", value: profile.phone, href: profile.phoneHref },
+  { label: "Email", hint: "Email me", value: profile.email, href: `mailto:${profile.email}` },
+  { label: "Phone", hint: "Call me", value: profile.phone, href: profile.phoneHref },
   {
     label: "LinkedIn",
+    hint: "Connect",
     value: "anavaradha-sankar",
     href: "https://www.linkedin.com/in/anavaradha-sankar/",
   },
   {
     label: "GitHub",
+    hint: "See code",
     value: "anavaradha-sankar",
     href: "https://github.com/anavaradha-sankar",
   },
   {
     label: "Instagram",
+    hint: "Say hi",
     value: "@das.ist.sankar",
     href: "https://www.instagram.com/das.ist.sankar",
   },
