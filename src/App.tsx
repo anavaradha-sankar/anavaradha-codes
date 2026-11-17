@@ -1,12 +1,12 @@
 import portrait from "./assets/sankar-portrait.webp";
 import { Nav, Section } from "./components";
 import { Contact } from "./contact";
+import { Experience } from "./experience";
 import { useReveal } from "./useReveal";
 import {
   certifications,
   coreStack,
   education,
-  experience,
   products,
   languages,
   profile,
@@ -149,48 +149,6 @@ function About() {
           </li>
         ))}
       </ul>
-    </Section>
-  );
-}
-
-function Experience() {
-  return (
-    <Section id="experience" index="02" label="Experience">
-      <h2 className="reveal font-display text-6xl leading-[0.9] tracking-wide md:text-7xl">
-        15+ years of <span className="outline-text">shipping</span>
-      </h2>
-      <ol className="mt-16 border-l border-line">
-        {experience.map((role, i) => (
-          <li key={role.dates} className="reveal relative pb-14 pl-8 last:pb-0 md:pl-12">
-            <span
-              className="absolute -left-[5px] top-2 h-[9px] w-[9px] rounded-full bg-gold"
-              aria-hidden="true"
-            />
-            <div className="grid gap-6 md:grid-cols-[16rem_1fr] md:gap-12">
-              <div>
-                <p className="font-display text-2xl text-gold/70">
-                  {String(i + 1).padStart(2, "0")}
-                </p>
-                <h3 className="font-display text-3xl tracking-wide">
-                  {role.title}
-                </h3>
-                <p className="mt-1 text-cream">{role.company}</p>
-                <p className="mt-1 text-xs uppercase tracking-[0.2em] text-muted">
-                  {role.place} · {role.dates}
-                </p>
-              </div>
-              <ul className="space-y-3 text-muted">
-                {role.points.map((p) => (
-                  <li key={p} className="flex gap-3 leading-relaxed">
-                    <span className="mt-[0.7em] h-px w-3 shrink-0 bg-gold/60" aria-hidden="true" />
-                    {p}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </li>
-        ))}
-      </ol>
     </Section>
   );
 }
