@@ -7,7 +7,7 @@ export const profile = {
   phone: "+41 76 223 11 23",
   phoneHref: "tel:+41762231123",
   cv: "/Anavaradha_Sankar_CV_Technical_Lead.pdf",
-  status: "Open to new roles",
+  status: "Open to new challenges",
 };
 
 export const links = [
