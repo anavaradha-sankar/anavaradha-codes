@@ -176,17 +176,7 @@ export function Contact() {
         </h2>
 
         <div className="mt-16 grid gap-12 md:mt-20 md:grid-cols-12 md:gap-16">
-          <ol className="relative md:col-span-8" onMouseLeave={() => setHovered(null)}>
-            <div
-              aria-hidden="true"
-              className={`pointer-events-none absolute -top-24 right-0 hidden overflow-hidden font-display text-8xl leading-none transition-opacity duration-500 md:block ${
-                hovered === null ? "opacity-0" : "opacity-100"
-              }`}
-            >
-              <span key={word} className="talk-word outline-text block whitespace-nowrap">
-                {word}
-              </span>
-            </div>
+          <ol className="md:col-span-8" onMouseLeave={() => setHovered(null)}>
             {links.map((l, i) => {
               const external = l.href.startsWith("http");
               const copyable = l.label === "Email" || l.label === "Phone";
@@ -220,14 +210,6 @@ export function Contact() {
                 </li>
               );
             })}
-            <li aria-hidden="true" className="h-24 overflow-hidden pt-4 md:h-40 md:pt-6">
-              <span
-                key={word}
-                className="talk-word outline-text block whitespace-nowrap font-display text-6xl leading-none opacity-40 md:text-8xl"
-              >
-                {word}
-              </span>
-            </li>
           </ol>
 
           <div className="md:col-span-4">
@@ -251,6 +233,14 @@ export function Contact() {
                 Download CV
               </a>
             </div>
+            <p
+              aria-hidden="true"
+              className="mt-16 hidden h-24 overflow-hidden font-display text-8xl leading-none opacity-40 md:block"
+            >
+              <span key={word} className="talk-word outline-text block whitespace-nowrap">
+                {word}
+              </span>
+            </p>
           </div>
         </div>
       </div>
